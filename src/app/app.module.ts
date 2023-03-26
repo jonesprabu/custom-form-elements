@@ -1,18 +1,42 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RatingInputComponent } from './components/rating-input/rating-input.component';
+import { FeedbackFormComponent } from './pages/feedback-form/feedback-form.component';
+
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FeedbackInputComponent } from './components/feedback-input/feedback-input.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RatingInputComponent,
+    FeedbackFormComponent,
+    FeedbackInputComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CommonModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon('star', sanitizer.bypassSecurityTrustResourceUrl('./assets/icons/star.svg'));
+  }
+}

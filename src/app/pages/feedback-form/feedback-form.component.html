@@ -1,0 +1,13 @@
+<form class="feedback-form" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+  <div class="feedback-input">
+    <div class="label"><label for="feedback">Feedback</label></div>
+    <textarea id="feedback" formControlName="feedback"></textarea>
+  </div>
+  <hr>
+  <div class="form-field-wrapper">
+    <app-rating-input class="form-field" formControlName="rating" [noOfStars]=5></app-rating-input>
+    <button type="submit" class="submit-btn" mat-raised-button mat-primary
+      [disabled]="feedbackForm.invalid">Submit</button>
+  </div>
+  <hr>
+</form>

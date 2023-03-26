@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'testapp'`, () => {
+  it(`should have as title 'CustomFormElements'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('testapp');
+    expect(app.title).toEqual('CustomFormElements');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('testapp app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('CustomFormElements app is running!');
   });
 });

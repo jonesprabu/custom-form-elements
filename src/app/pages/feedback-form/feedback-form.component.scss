@@ -1,0 +1,35 @@
+:host {
+  .feedback-form {
+    padding: 30px;
+    max-width: 400px;
+    .feedback-input {
+      padding: 20px;
+
+      .label {
+        padding-bottom: 10px;
+      }
+      textarea {
+        width: 330px;
+        height: 100px;
+        border: 1px solid #f0f0f0;
+        :focus {
+          border: 1px solid #D1D1D1;
+        }
+      }
+    }
+    .form-field-wrapper{
+      display: flex;
+    }
+    .form-field {
+      padding-bottom: 20px;
+    }
+    hr {
+      border-top: 1px solid #f0f0f0;
+      border-left: 0;
+    }
+    .submit-btn {
+      margin: auto;
+      background-color: #424242;
+    }
+  }
+}

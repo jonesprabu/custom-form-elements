@@ -1,0 +1,6 @@
+<div class="rating-input">
+  <div class="label">Rating ({{rating}})</div>
+  <mat-icon class="star" *ngFor="let n of [].constructor(noOfStars); let i = index" aria-hidden="false" aria-label="Star rating"
+    svgIcon="star" (click)="setRating(i+1)" [ngStyle]="{'color': rating < i+1 ? 'lightgrey' : 'black'}"></mat-icon>
+</div>
+

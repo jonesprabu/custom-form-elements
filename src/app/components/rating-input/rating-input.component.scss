@@ -1,0 +1,22 @@
+:host {
+  .rating-input {
+    padding: 20px;
+    max-width: 200px;
+
+    .label {
+      padding-bottom: 20px;
+    }
+    .star {
+      cursor: pointer;
+      padding-right: 10px;
+      path {
+        fill: rgb(0, 0 ,0);
+      }
+    }
+    .mat-icon:hover {
+      path {
+        fill: rgb(216, 29, 29);
+      }
+    }
+  }
+}
