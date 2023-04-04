@@ -11,7 +11,7 @@ export class FeedbackFormComponent {
 
   feedbackForm = this.fb.group({
     feedback: new FormControl('', [Validators.required]),
-    rating: new FormControl(0, [Validators.required])
+    rating: new FormControl(4, [Validators.required])
   });
 
   constructor(private fb: FormBuilder) {}

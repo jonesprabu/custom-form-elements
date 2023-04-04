@@ -1,0 +1,50 @@
+<form class="manage-students-form" [formGroup]="manageStudentsForm" (ngSubmit)="onSubmit()">
+  <div class="form-input">
+    <div class="label"><label for="firstName">First Name</label></div>
+    <input type="text" id="firstName" formControlName="firstName"/>
+  </div>
+  <hr>
+  <div class="form-input">
+    <div class="label"><label for="lastName">Last Name</label></div>
+    <input type="text" id="lastName" formControlName="lastName"/>
+  </div>
+  <hr>
+  <div class="form-input">
+    <div class="label"><label for="email">Email</label></div>
+    <input type="text" id="email" formControlName="email"/>
+  </div>
+  <hr>
+  <div class="form-input">
+    <div class="label"><label for="gender">Gender</label></div>
+    <select id="gender" formControlName="gender">
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="NB">Non Binary</option>
+      <option value="O">OTHER</option>
+      <option value="PNTS">Prefer Not To Say</option>
+    </select>
+  </div>
+  <hr>
+  <div class="form-input">
+    <div class="label"><label for="dob">Date of Birth</label></div>
+    <input type="date" id="dob" formControlName="dob"/>
+  </div>
+  <hr>
+  <div class="form-input">
+    <div class="label"><label for="doj">Date of Joining</label></div>
+    <input type="date" id="doj" formControlName="doj"/>
+  </div>
+  <hr>
+  <div class="form-field-wrapper">
+    <!-- <app-rating-input class="form-field" formControlName="rating" [noOfStars]=5></app-rating-input> -->
+    <span class="space"></span>
+    <button type="submit" class="submit-btn" mat-raised-button mat-primary
+      [disabled]="manageStudentsForm.invalid">Submit</button>
+  </div>
+  <hr>
+</form>
+
+<hr><hr>
+Students:
+<hr><hr>
+{{students$ | async | json}}
